@@ -1,0 +1,52 @@
+import pandas as pd
+import seaborn as sns
+
+# Load the dataset
+iris = sns.load_dataset('iris')
+
+# Display the first few rows
+print(iris.head())
+# Summary of the dataset
+print(iris.info())
+
+# Statistical summary
+print(iris.describe())
+# Check for missing values
+print(iris.isnull().sum())
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Set the aesthetics for seaborn
+sns.set(style="whitegrid")
+
+# Plotting histograms and KDE
+fig, axes = plt.subplots(2, 2, figsize=(12, 8))
+
+sns.histplot(iris['sepal_length'], kde=True, ax=axes[0, 0])
+sns.histplot(iris['sepal_width'], kde=True, ax=axes[0, 1])
+sns.histplot(iris['petal_length'], kde=True, ax=axes[1, 0])
+sns.histplot(iris['petal_width'], kde=True, ax=axes[1, 1])
+
+plt.tight_layout()
+plt.show()
+# Pairplot to visualize relationships between variables
+sns.pairplot(iris, hue='species')
+plt.show()
+# Correlation matrix
+corr_matrix = iris.corr()
+
+# Heatmap
+plt.figure(figsize=(8, 6))
+sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
+plt.show()
+# Boxplots for detecting outliers
+fig, axes = plt.subplots(2, 2, figsize=(12, 8))
+
+sns.boxplot(x=iris['sepal_length'], ax=axes[0, 0])
+sns.boxplot(x=iris['sepal_width'], ax=axes[0, 1])
+sns.boxplot(x=iris['petal_length'], ax=axes[1, 0])
+sns.boxplot(x=iris['petal_width'], ax=axes[1, 1])
+
+plt.tight_layout()
+plt.show()
+
