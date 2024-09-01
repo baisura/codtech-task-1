@@ -1,7 +1,11 @@
 NAME: Baisura S 
+
 COMPANY : CODTECH IT SOLUTIONS
+
 ID : CT08DS7368
+
 DOMAIN : Data science
+
 DURATION : august to septemper 2024
 
 
